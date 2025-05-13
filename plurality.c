@@ -1,4 +1,4 @@
-#include <cs50.h>
+#include "./libs/cs50.h"
 #include <stdio.h>
 #include <string.h>
 
@@ -65,13 +65,22 @@ int main(int argc, string argv[])
 // Update vote totals given a new vote
 bool vote(string name)
 {
-    // TODO
+    for (int i = 0; i < candidate_count; i++)
+    {
+        // here iterate through all candidates and if it equals any of them add a vote to that candidate
+        if (strcmp(candidates[i].name, name) == 0)
+        {
+            candidates[i].votes++;
+            return true;
+        }
+    }
     return false;
-}
+
+    }
+
 
 // Print the winner (or winners) of the election
 void print_winner(void)
 {
-    // TODO
-    return;
+
 }
